@@ -14,4 +14,4 @@ relevant bits of configuration for ```DoSFilter```
 
 Start the jetty using the ```maven-jetty-plugin``` and go to [http://localhost:9999](http://localhost:9999).
 
-Expecting a 414 status or 408 (request timeout status) after clicking on the link, but instead getting a 200 status code and no output.
+Expecting a 418 status or 408 (request timeout status) after clicking on the link, but instead getting a 200 status code and no output.
