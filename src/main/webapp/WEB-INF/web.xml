@@ -1,0 +1,32 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>Send 418 after a while</servlet-name>
+        <servlet-class>jetty_issues.dos_filter_example.Send418AfterAWhile</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Send 418 after a while</servlet-name>
+        <url-pattern>/418</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>Jetty DoS Filter</filter-name>
+        <filter-class>org.eclipse.jetty.servlets.DoSFilter</filter-class>
+        <init-param>
+            <param-name>maxRequestMs</param-name>
+            <param-value>2000</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>Jetty DoS Filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+</web-app>
